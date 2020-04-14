@@ -34,7 +34,8 @@ module.exports = {
       options: {
         sheetId: 'GOOGLE_SHEET_ID', 
         apiKey: 'GOOGLE_API_KEY',
-        // type: 'TYPE_NAME', //Optional - default is googleSheet. Used for graphql queries.
+        // type: 'TYPE_NAME', // Optional - default is googleSheet. Used for graphql queries.
+        // range: 'A1:Z1000', // Optional - default should encompass all cells in a sheet. Specific tabs in a sheet can be specified like 'tab_name!A1:Z1000'.  
       }
     }
   ]

@@ -6,6 +6,7 @@ class GoogleSheetSource {
       sheetId: '',
       apiKey: '',
       type: 'googleSheet',
+      range: 'A1:ZZ10000',
     }
   }
 
@@ -25,7 +26,7 @@ class GoogleSheetSource {
       await sheets.spreadsheets.values
         .get({
           spreadsheetId: this.options.sheetId,
-          range: 'A1:ZZ10000',
+          range: this.options.range,
         })
         .then(response => {
           const data = response.data.values
@@ -36,7 +37,7 @@ class GoogleSheetSource {
               {}
             )
           })
-          nodes.map((value, key, title) => {
+          nodes.map((value) => {
             contentType.addNode(value)
           })
         })
